@@ -1,0 +1,12 @@
+parameters:
+  dbo_dev.application_form_alter.class: Drupal\dbo_dev\Alter\DboDevFormAlter
+  dbo_dev.helper.class: Drupal\dbo_dev\Helper\DboHelper
+
+services:
+  dbo_dev.application_form_alter:
+    class: '%dbo_dev.application_form_alter.class%'
+    arguments: ['@current_user', '@dbo_dev.helper', '@request_stack']
+
+  dbo_dev.helper:
+    class: '%dbo_dev.helper.class%'
+    arguments: ['@http_client', '@request_stack']

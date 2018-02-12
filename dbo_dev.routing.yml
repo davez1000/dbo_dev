@@ -1,0 +1,8 @@
+dbo.form:
+ path: '/application/dbodevform/{region}'
+ defaults:
+   region: 'All'
+   _title: 'DBO Developer Form'
+   _form: '\Drupal\dbo_dev\Form\DboDevForm'
+ requirements:
+   _permission: 'access content'

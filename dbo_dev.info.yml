@@ -1,0 +1,9 @@
+name: DBO Drupal Test
+type: module
+description: DBO Drupal test.
+core: 8.x
+package: Custom
+dependencies:
+#  - dpe_jwt_install_config
+#  - email_auth
+#  - dpe_lodgement_da_application

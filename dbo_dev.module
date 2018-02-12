@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * @file
+ * Description here
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function dbo_dev_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $application_form_ids = array(
+    'dbo_dev_form',
+  );
+
+  if (!in_array($form_id, $application_form_ids)) {
+    return $form;
+  }
+
+  switch ($form_id) {
+    case 'dbo_dev_form':
+      $form = \Drupal::service('dbo_dev.application_form_alter')
+        ->hookFormAlter($form, $form_state, $form_id);
+      break;
+    default:
+      break;
+  }
+}
+
+
